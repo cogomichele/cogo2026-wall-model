@@ -1,4 +1,4 @@
-# rough-wall-wm
+# cogo2026-wall-model
 
 Physics-based wall model for compressible turbulent boundary layers over prism-shaped roughness.
 
