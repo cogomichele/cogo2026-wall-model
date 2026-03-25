@@ -18,10 +18,10 @@ Given mean flow information far from the wall and roughness geometry, the model 
 
 ## Usage
 
-Edit the input block at the top of `wall_model.py` to match your case, then run:
+Edit the input block at the top of `rough_wall_model.py` to match your case, then run:
 
 ```bash
-python wall_model.py
+python rough_wall_model.py
 ```
 
 Output example:
