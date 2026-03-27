@@ -12,7 +12,7 @@ Given mean flow information far from the wall and roughness geometry, the model 
 1. **Drag model** — roughness geometry and sheltering, Yang et al. (2016) [Appendix A]
 2. **Compressibility correction** — Van Driest (1951) transformation [Eq. 6.2]
 3. **Thermal closure** — temperature–velocity relation, three options [Table 3]
-   - `BRADSHAW` — Huang & Coleman (1994), $Pr_e = 0.8$ ← recommended
+   - `HUANG` — Huang & Coleman (1994), $Pr_e = 0.8$ ← recommended
    - `WALZ` — Walz (1969), $r = Pr^{1/3}$
    - `ZHANG` — Zhang et al. (2014), generalised Reynolds analogy
 
@@ -27,7 +27,7 @@ python rough_wall_model.py
 Output example:
 
 ```
-  M2I [BRADSHAW]  |  eps_tauw +7.843 %  |  eps_qw +14.295 %
+  M2I [HUANG]  |  eps_tauw +7.843 %  |  eps_qw +14.295 %
 ```
 
 ## Requirements
