@@ -4,28 +4,37 @@ Cogo et al., J. Fluid Mech. (under review)
 """
 
 import numpy as np
+# ── Reference quantities ─────────────────────────────────────────
+L_0      = 1.0                           # Reference length
+gamma    = 1.4                           # Adiabatic index
+R        = 1.0                           # Gas constant
+Mach     = 2.0                           # Mach number
+T_0      = 1.0                           # Reference temperature
+p_0      = 1.0                           # Reference pressure
+rho_0    = p_0/T_0                       # Reference density  
+U_0      = Mach*np.sqrt(gamma*p_0/rho_0) # Reference velocity
 
 # ── DNS reference values (case M2I) ─────────────────────────────────────────
-tauw_DNS = 1.1880873065331360e-2
+tauw_DNS = 1.1880873065331360e-2 
 qw_DNS   = 1.0342713513744434e-2
 
 # ── Matching-point quantities (Adimensional, sampled at y+ ~ 300) ──────────────
-y_match  = 6.6080252856e-01   # y_m
+y_match  = 6.6080252856e-01   # y_m/L_0
 u_match  = 1.3441701604e+00   # u_m
-T_match  = 1.2562289607e+00   # T_m
+T_match  = 1.2562289607e+00   # T_m/T_0
 
 # ── Boundary-layer edge and wall quantities (Adimensional) ───────────────────────────────────
-T_wall   = 1.179256189862286  # T_w
-rho_wall = 0.8490377235127163 # rho_w
-T_edge   = 1.0167895877e+00   # T_delta
+T_wall   = 1.179256189862286  # T_w/T_0
+rho_wall = 0.8490377235127163 # rho_w/rho_0
+T_edge   = 1.0167895877e+00   # T_delta/T_0
 u_edge   = 2.3429738595e+00   # u_delta
 
 # ── Fluid properties ──────────────────────────────────────────────────────────
 Pr       = 0.72               # molecular Prandtl number
-Cp       = 3.5                # specific heat at constant pressure c_p
+Cp       = gamma*R/(gamma-1)  # specific heat at constant pressure c_p
 
 # ── Roughness geometry ────────────────────────────────────────────────────────
-k        = 0.12               # roughness height (cubical elements)
+k        = 0.12               # k/L_0 roughness height (cubical elements)
 
 # ── Temperature-velocity closure: 'ZHANG', 'WALZ', or 'HUANG' ─────────────
 # HUANG = Huang & Coleman (1994), Pre = 0.8 — best performer (Table 4)
